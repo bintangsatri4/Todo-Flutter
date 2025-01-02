@@ -23,15 +23,43 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      DisplayWhiteText(text: "May 4, 2025", size: 25,fontWeight: FontWeight.normal,),
-                  Gap(10),
-                  DisplayWhiteText(text: "My Todo", size: 50,fontWeight: FontWeight.bold,),
-
+                      DisplayWhiteText(
+                        text: "May 4, 2025",
+                        size: 25,
+                        fontWeight: FontWeight.normal,
+                      ),
+                      Gap(10),
+                      DisplayWhiteText(
+                        text: "My Todo",
+                        size: 50,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ],
                   ),
                 ),
-                
-              )
+              ),
+              Positioned(
+                  child: SingleChildScrollView(
+                    physics: AlwaysScrollableScrollPhysics(),
+                child: Column(
+                  children: [
+                    Container(
+                      width: deviceSize.width,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: colors.primaryContainer,
+                      ),
+                      child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: 8,
+                          padding: EdgeInsets.zero,
+                          itemBuilder: (ctx, index) {
+                            return Text('home');
+                          }),
+                    ),
+                  ],
+                ),
+              ))
             ],
           )
         ],
