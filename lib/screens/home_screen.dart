@@ -39,14 +39,16 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Positioned(
+                top: 130,
                   child: SingleChildScrollView(
-                    physics: AlwaysScrollableScrollPhysics(),
+                    physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
                     Container(
                       width: deviceSize.width,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(15),
                         color: colors.primaryContainer,
                       ),
                       child: ListView.builder(
