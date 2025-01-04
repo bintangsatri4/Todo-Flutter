@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                           itemCount: 8,
                           padding: EdgeInsets.zero,
                           itemBuilder: (ctx, index) {
-                            return Text('home');
+                            return Text('Your Todo');
                           }),
                     ),
                   ],
