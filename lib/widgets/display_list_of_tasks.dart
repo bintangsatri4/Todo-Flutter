@@ -37,7 +37,10 @@ class DisplayListOfTasks extends StatelessWidget {
                 return Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.only(
+                        left: 16,
+                        top: 10,
+                      ),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: task.category.color.withOpacity(0.2),
@@ -53,6 +56,7 @@ class DisplayListOfTasks extends StatelessWidget {
                     const Gap(16),
                     Expanded(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [Text(task.title), Text(task.time)],
                       ),
                     ),
