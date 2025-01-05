@@ -28,19 +28,20 @@ class DisplayListOfTasks extends StatelessWidget {
               child: Text(emptyTaskMessage,
                   style: context.textTheme.headlineSmall),
             )
-          : ListView.builder(
+          : ListView.separated(
               shrinkWrap: true,
               itemCount: tasks.length,
-              padding: EdgeInsets.zero,
+              padding: EdgeInsets.only(
+                left: 16,
+                top: 10,
+                bottom: 10,
+              ),
               itemBuilder: (ctx, index) {
                 final task = tasks[index];
                 return Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.only(
-                        left: 16,
-                        top: 10,
-                      ),
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: task.category.color.withOpacity(0.2),
@@ -63,7 +64,13 @@ class DisplayListOfTasks extends StatelessWidget {
                     Checkbox(value: task.isCompleted, onChanged: (value) {})
                   ],
                 );
-              }),
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return Divider(
+                  thickness: 1.5,
+                );
+              },
+            ),
     );
   }
 }

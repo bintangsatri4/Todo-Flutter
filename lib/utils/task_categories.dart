@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 enum TaskCategories {
   education(icon: Icons.school, color: Colors.blueAccent),
   health(icon: Icons.favorite, color: Colors.redAccent),
-  home(icon: Icons.home, color: Colors.teal),
+  home(icon: Icons.home, color: Colors.green),
   others(icon: Icons.calendar_month_rounded, color: Colors.deepPurpleAccent),
   personal(icon: Icons.person, color: Colors.lightBlueAccent),
   shopping(icon: Icons.shopping_bag, color: Colors.orangeAccent),
