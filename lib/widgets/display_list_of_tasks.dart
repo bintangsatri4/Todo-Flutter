@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/data/data.dart';
 import 'package:todo_app/utils/extensions.dart';
+import 'package:gap/gap.dart';
 
 import 'common_container.dart';
 
@@ -32,17 +33,30 @@ class DisplayListOfTasks extends StatelessWidget {
               itemCount: tasks.length,
               padding: EdgeInsets.zero,
               itemBuilder: (ctx, index) {
+                final task = tasks[index];
                 return Row(
                   children: [
                     Container(
+                      padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.red,
-                      ),
+                          shape: BoxShape.circle,
+                          color: task.category.color.withOpacity(0.2),
+                          border:
+                              Border.all(width: 2, color: task.category.color)),
                       child: Center(
-                        child: Icon(Icons.person),
+                        child: Icon(
+                          task.category.icon,
+                          color: task.category.color,
+                        ),
                       ),
-                    )
+                    ),
+                    const Gap(16),
+                    Expanded(
+                      child: Column(
+                        children: [Text(task.title), Text(task.time)],
+                      ),
+                    ),
+                    Checkbox(value: task.isCompleted, onChanged: (value) {})
                   ],
                 );
               }),
