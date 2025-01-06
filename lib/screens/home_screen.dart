@@ -80,8 +80,29 @@ class HomeScreen extends StatelessWidget {
                         style: context.textTheme.headlineMedium,
                       ),
                       const Gap(20),
-                      const DisplayListOfTasks(
-                          tasks: [], isCompletedTasks: true),
+                      const DisplayListOfTasks(tasks: [
+                        Task(
+                            title: 'title',
+                            note: 'note',
+                            time: '10 2025',
+                            date: 'January',
+                            isCompleted: true,
+                            category: TaskCategories.work),
+                        Task(
+                            title: 'title',
+                            note: 'note',
+                            time: '10 2025',
+                            date: 'January',
+                            isCompleted: true,
+                            category: TaskCategories.social),
+                        Task(
+                            title: 'title',
+                            note: 'note',
+                            time: '10 2025',
+                            date: 'January',
+                            isCompleted: true,
+                            category: TaskCategories.home)
+                      ], isCompletedTasks: true),
                       const Gap(20),
                       ElevatedButton(
                         onPressed: () {},
