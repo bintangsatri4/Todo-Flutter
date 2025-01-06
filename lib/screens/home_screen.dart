@@ -55,21 +55,21 @@ class HomeScreen extends StatelessWidget {
                         Task(
                             title: 'title',
                             note: 'note',
-                            time: '10 2025',
+                            time: '10:05',
                             date: 'January',
                             isCompleted: false,
                             category: TaskCategories.work),
                         Task(
                             title: 'title',
                             note: 'note',
-                            time: '10 2025',
+                            time: '10:25',
                             date: 'January',
                             isCompleted: false,
                             category: TaskCategories.social),
                         Task(
                             title: 'title',
                             note: 'note',
-                            time: '10 2025',
+                            time: '11:25',
                             date: 'January',
                             isCompleted: false,
                             category: TaskCategories.home)
@@ -84,24 +84,24 @@ class HomeScreen extends StatelessWidget {
                         Task(
                             title: 'title',
                             note: 'note',
-                            time: '10 2025',
+                            time: '10:12',
                             date: 'January',
                             isCompleted: true,
-                            category: TaskCategories.work),
+                            category: TaskCategories.health),
                         Task(
                             title: 'title',
                             note: 'note',
-                            time: '10 2025',
+                            time: '10:12',
                             date: 'January',
                             isCompleted: true,
-                            category: TaskCategories.social),
+                            category: TaskCategories.education),
                         Task(
                             title: 'title',
                             note: 'note',
-                            time: '10 2025',
+                            time: '10:12',
                             date: 'January',
                             isCompleted: true,
-                            category: TaskCategories.home)
+                            category: TaskCategories.personal)
                       ], isCompletedTasks: true),
                       const Gap(20),
                       ElevatedButton(

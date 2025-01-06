@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/data/data.dart';
 import 'package:todo_app/utils/extensions.dart';
+import 'package:todo_app/widgets/task_details.dart';
 import 'package:todo_app/widgets/task_title.dart';
 
 import 'common_container.dart';
@@ -34,7 +35,19 @@ class DisplayListOfTasks extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemBuilder: (ctx, index) {
                 final task = tasks[index];
-                return TaskTitle(task: task);
+                return InkWell(
+                    onLongPress: () {
+                      //Delete Todo
+                    },
+                    onTap: () async {
+                      await showModalBottomSheet(
+                        context: context,
+                        builder: (ctx) {
+                          return TaskDetails(task: task);
+                        },
+                      );
+                    },
+                    child: TaskTitle(task: task));
               },
               separatorBuilder: (BuildContext context, int index) {
                 return const Divider(
