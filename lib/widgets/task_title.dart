@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/data/data.dart';
 import 'package:gap/gap.dart';
 import 'package:todo_app/utils/extensions.dart';
+import 'package:todo_app/widgets/circle_container.dart';
 
 class TaskTitle extends StatelessWidget {
   const TaskTitle({super.key, required this.task, this.onCompleted});
@@ -26,17 +27,11 @@ class TaskTitle extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            padding: const EdgeInsets.all(9),
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: task.category.color.withOpacity(backgroudOpacity),
-                border: Border.all(width: 2, color: task.category.color)),
-            child: Center(
-              child: Icon(
-                task.category.icon,
-                color: task.category.color.withOpacity(iconOpacity),
-              ),
+          CircleContainer(
+            color: task.category.color.withOpacity(backgroudOpacity),
+            child: Icon(
+              task.category.icon,
+              color: task.category.color.withOpacity(iconOpacity),
             ),
           ),
           const Gap(16),

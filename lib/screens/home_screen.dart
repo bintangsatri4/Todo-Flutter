@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Positioned(
-              top: 140,
+              top: 130,
               left: 0,
               right: 0,
               child: SafeArea(
@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                         'Completed',
                         style: context.textTheme.headlineMedium,
                       ),
-                      const Gap(20),
+                      const Gap(10),
                       const DisplayListOfTasks(tasks: [
                         Task(
                             title: 'title',
